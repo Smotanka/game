@@ -1,0 +1,177 @@
+.headline{
+    font-weight: 400;
+    font-style: normal;
+    font-family: Roboto, monospace;
+    font-size: 5rem;
+    margin-left: 2.5%;
+}
+
+.text,.text-headline{
+    background: rgba(255,255,255,.75);
+    margin: 2.5%;
+    padding: 0;
+
+
+}
+.btn{
+    background: rgba(255,255,255,.75);
+}
+
+p{
+    margin:1.5rem;
+    font-size: 1.5rem;
+
+}
+
+#canvas{
+    position: relative;
+    margin-bottom: 1.5rem;
+
+
+
+
+}
+
+
+.bowl {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    border: white 5px solid;
+
+
+
+
+
+
+}
+.dropzone{
+    width: auto;
+
+
+    z-index: 1;
+    position: absolute;
+    filter: grayscale(100%);
+    opacity: 0.5;
+
+}
+
+
+.image{
+    z-index: 2;
+
+
+
+    position: absolute;
+}
+.num{
+    margin-left:10% ;
+    width: 100%;
+    height: auto;
+    font-size:2vw;
+}
+
+#legend{
+    position: relative;
+    top:2vw;
+    left:1vw;
+    z-index: 2;
+}
+
+
+body{
+    background: url("images/background.jpg") no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+
+}
+#profile{
+    width: 10rem;
+    margin-bottom: 1.5%;
+    margin-left: 45%;
+    margin-right: 45%;
+
+    background: rgba(255,255,255,.75);
+}
+.card-text{
+    margin:0.5rem;
+    font-size: 1rem;
+
+}
+#hint{
+    background: rgba(255,255,255,.75);
+    padding-left: 2%;
+
+
+}
+#hint-lit{
+
+    margin: 0;
+}
+li{
+    font-size: 1.5vw;
+    color:black;
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, monospace;
+}
+
+#timer{
+    margin-bottom: 1vw;
+    background: whitesmoke;
+    color: black;
+
+
+}
+.Stats{
+    font-family: Roboto, monospace;
+}
+#sound{
+    max-width: 40px;
+    max-height:40px;
+    margin-right: 5px;
+
+}
+#sound:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1550px ){
+    .headline{
+        text-align: center;
+    }
+    .image{
+        width:auto ;
+
+        height: 6rem;
+    }
+    .dropzone{
+        width:auto ;
+
+        height:6rem;
+    }
+
+
+ li
+{
+     font-size: large;
+ }
+
+}
+
+@media only screen and (max-width: 768px ){
+    .image{
+        width:auto ;
+
+        height: 4.75rem;
+    }
+    .dropzone{
+        width:auto ;
+
+        height: 4.75rem;
+    }
+}
+
+
+

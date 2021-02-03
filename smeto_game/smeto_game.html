@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Robot</title>
+    <link rel="icon"
+          type="image/png"
+          href="images/icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+    <script src="../resources/jquery/dist/jquery.slim.js"></script>
+    <script src="../resources/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../resources/party-js-master/party.min.js"></script>
+    <link  rel="script" href="../resources/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="../resources/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="../resources/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="../resources/easytimer.js/dist/easytimer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="smeto_game.css">
+    <script src="smeto_game.js"></script>
+</head>
+<body id="body">
+<div class="text-container">
+    <div class="text-headline text-xl-center">
+        <h1 class="headline">Robot P-201</h1>
+    </div>
+
+    <div class="text-center text">
+        <h1>Repair this P-201 cleaning unit.</h1>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="gameOver" tabindex="-1" role="dialog" aria-labelledby="gameOverLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gameOverLongTitle">Congratulations !!</h5>
+                <button type="button" class="close" onclick="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 class="Stats"><b>Stats</b></h2>
+                <ul>
+                    <li id="nespravne"></li>
+                    <li id="cas"></li>
+                    <li id="percent"></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <div class="p-2"><button type="button" class="btn btn-outline-dark" onclick="playOver(),closeModal()">Play again</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container " id="canvas">
+
+
+    <div class="d-flex">
+
+
+        <div class="p-2"><button type="button" class="btn btn-outline-dark" id="demo" onclick="animation()">Demo</button></div>
+        <div class="p-2"><button type="button" class="btn btn-outline-dark" onclick="playOver(),playOver2()">Play again</button></div>
+        <h1><a onclick="mute()"><img alt="sound"  id="sound"  src="images/sound.png" ></a></h1>
+        <div class="p-2"><div  class="btn btn-outline-dark" id="timer"  >00:00:00</div></div>
+
+    </div>
+
+
+    <img src="images/smile.png" class="dropzone" alt="bowl" id="#8" style="height: auto;width:7%; top:35%;left:49%;">
+
+    <img src="images/left-hand.png" class="dropzone" alt="bowl" id="#7" style="height: 35%;width:auto; top:45%;left:33%;">
+    <img src="images/right-hand.png" class="dropzone" alt="bowl" id="#6" style="height: 35%;width:auto;top:45%;left:60%;">
+    <img src="images/right-foot.png" class="dropzone" alt="bowl" id="#5" style="height: 35%;width:auto;top:66%;left:51%;">
+    <img src="images/left-foot.png" class="dropzone" alt="bowl" id="#4" style="height: 35%;width:auto;top:66%;left:38%;">
+
+    <img src="images/motherboard.png" class="dropzone" alt="bowl" id="#3" style="height: 8%;width:auto;top:48%;left:43%;">
+    <img src="images/gears.png" class="dropzone" alt="bowl" id="#2" style="height: 7%;width:auto;top:58%;left:49%;">
+    <img src="images/laser.png" class="dropzone" alt="bowl" id="#1" style="height: 7%;width:auto;top:48%;left:52%;">
+
+
+    <img src="images/robot.png" class="bowl" alt="bowl" >
+    <div class="end"></div>
+
+
+
+    <img src="images/smile.png" class="image" alt="bowl" id="8" style="height: auto;width:7%">
+    <img src="images/left-hand.png" class="image" alt="bowl" id="7" style="height: 35%;width:auto">
+    <img src="images/right-hand.png" class="image" alt="bowl" id="6" style="height: 35%;width:auto">
+    <img src="images/right-foot.png" class="image" alt="bowl" id="5" style="height: 35%;width:auto">
+    <img src="images/left-foot.png" class="image" alt="bowl" id="4" style="height: 35%;width:auto">
+    <img src="images/motherboard.png" class="image" alt="bowl" id="3" style="height: 8%;width:auto">
+    <img src="images/gears.png" class="image" alt="bowl" id="2" style="height: 7%;width:auto">
+    <img src="images/laser.png" class="image" alt="bowl" id="1" style="height: 7%;width:auto">
+
+
+</div>
+<script>resize();resize2()</script>
+
+
+
+<footer >
+    <div class="card"  id="profile">
+        <img class="card-img-top" src="images/Ftip.jpg" alt="Card image cap" >
+        <div class="card-body">
+            <p class="card-text">Author: <a href="https://github.com/Smotanka">Martin Smetanka</a></p>
+        </div>
+    </div>
+    <a href="https://www.vecteezy.com/free-vector/galaxy">Galaxy Vectors by Vecteezy</a>
+    <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>  <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</footer>
+</body>
+</html>
